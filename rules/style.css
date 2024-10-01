@@ -10,7 +10,6 @@ body {
     display: grid;
     grid-template-columns: 15rem 1fr;
   }
-
   main.main-content,
   div.footnotes {
     max-width: 40rem;
@@ -29,6 +28,8 @@ main.main-content {
   padding: 1rem;
 }
 
+p.indent,
+p.noindent {
 p.indent,
 p.noindent {
   text-indent: 0;
@@ -137,18 +138,35 @@ nav.TOC.main {
   }
 }
 
-
 /* *** Colors *** */
 
 :root {
+  color-scheme: light dark; /* Default supports both light and dark schemes */
+
+  /* Light mode default variables */
   --main-background-color: #ccc5b3;
   --accent-background-color: #313831;
   --text-background-color: #ffffff;
   --text-color: #000000;
 }
 
-:root {
-  color-scheme: light;
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Light theme styles */
+    --main-background-color: #ccc5b3;
+    --accent-background-color: #313831;
+    --text-background-color: #ffffff;
+    --text-color: #000000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background-color: #4d4533;
+    --accent-background-color: #c6cdc6;
+    --text-background-color: #000000;
+    --text-color: #ffffff;
+  }
 }
 
 body {
